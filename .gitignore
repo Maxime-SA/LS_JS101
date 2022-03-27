@@ -1,2 +1,3 @@
 .DS_Store
-Lessons/Library/
+Lessons/Lesson_2/node_modules
+.json
