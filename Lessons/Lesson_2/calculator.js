@@ -1,23 +1,53 @@
 const readline = require('readline-sync');
 
-console.log('Welcome to Calculator!');
+function prompt(message) {
+  console.log(`=> ${message}`);
+}
 
-let firstNumber = Number(readline.question('What is your first number? '));
-let secondNumber = Number(readline.question('What is your second number? '));
-let typeOfOperation = readline.question('What type of operation do you want to perform:\n1) add\n2) subtract\n3) multiply\n4) divide\n... ')
+function invalidNumber(number) {
+  return Number.isNaN(number);
+}
 
-console.log('The result of your operation is ...')
+prompt('Welcome to Calculator!');
+
+prompt("What's the first number?");
+let firstNumber = Number(readline.question());
+
+while (invalidNumber(firstNumber)) {
+  prompt("Hmm... that doens't look like a valid number.");
+  prompt("Please enter your first number again.");
+  firstNumber = readline.question();
+}
+
+prompt("What's the second number?");
+let secondNumber = Number(readline.question());
+
+while (invalidNumber(secondNumber)) {
+  prompt("Hmm... that doens't look like a valid number.");
+  prompt("Please enter your second number again.");
+  secondNumber = readline.question();
+}
+
+let typeOfOperation = readline.question('What type of operation do you want to perform:\n1) add\n2) subtract\n3) multiply\n4) divide\n... ');
+
+while (!['add', 'subtract', 'multiply', 'divide'].includes(typeOfOperation)) {
+  prompt("Make sure to enter: add, subtract, multiply or divide.");
+  prompt("So, what type of operation would you like to do?");
+  typeOfOperation = readline.question();
+}
+
+prompt('The result of your operation is ...');
 
 switch (typeOfOperation) {
   case 'add':
-    console.log(firstNumber + secondNumber);
+    prompt(firstNumber + secondNumber);
     break;
   case 'subtract':
-    console.log(firstNumber - secondNumber);
+    prompt(firstNumber - secondNumber);
     break;
   case 'multiply':
-    console.log(firstNumber * secondNumber);
+    prompt(firstNumber * secondNumber);
     break;
   case 'divide':
-    console.log(firstNumber / secondNumber);
+    prompt(firstNumber / secondNumber);
 }
