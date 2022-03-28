@@ -1,4 +1,5 @@
 .DS_Store
 Lessons/Lesson_2/node_modules
-*.json
+Lessons/Lesson_2/package-lock.json
+Lessons/Lesson_2/package.json
 .eslintrc.yml
