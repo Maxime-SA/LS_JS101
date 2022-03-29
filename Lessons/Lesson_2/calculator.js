@@ -1,3 +1,4 @@
+const myJSON = require('./calculator_messages.json');
 const readline = require('readline-sync');
 
 function prompt(message) {
@@ -8,46 +9,56 @@ function invalidNumber(number) {
   return Number.isNaN(number);
 }
 
-prompt('Welcome to Calculator!');
+while (true) {
 
-prompt("What's the first number?");
-let firstNumber = Number(readline.question());
+  prompt(myJSON.welcome);
 
-while (invalidNumber(firstNumber)) {
-  prompt("Hmm... that doens't look like a valid number.");
-  prompt("Please enter your first number again.");
-  firstNumber = readline.question();
-}
+  prompt(myJSON.firstNumber);
+  let firstNumber = Number(readline.question());
 
-prompt("What's the second number?");
-let secondNumber = Number(readline.question());
+  while (invalidNumber(firstNumber)) {
+    prompt(myJSON.invalidNumber);
+    prompt(myJSON.numberTryAgain);
+    firstNumber = Number(readline.question());
+  }
 
-while (invalidNumber(secondNumber)) {
-  prompt("Hmm... that doens't look like a valid number.");
-  prompt("Please enter your second number again.");
-  secondNumber = readline.question();
-}
+  prompt(myJSON.secondNumber);
+  let secondNumber = Number(readline.question());
 
-let typeOfOperation = readline.question('What type of operation do you want to perform:\n1) add\n2) subtract\n3) multiply\n4) divide\n... ');
+  while (invalidNumber(secondNumber)) {
+    prompt(myJSON.invalidNumber);
+    prompt(myJSON.numberTryAgain);
+    secondNumber = Number(readline.question());
+  }
 
-while (!['add', 'subtract', 'multiply', 'divide'].includes(typeOfOperation)) {
-  prompt("Make sure to enter: add, subtract, multiply or divide.");
-  prompt("So, what type of operation would you like to do?");
-  typeOfOperation = readline.question();
-}
+  prompt(myJSON.operationType);
+  let typeOfOperation = readline.question();
 
-prompt('The result of your operation is ...');
+  while (!['add', 'subtract', 'multiply', 'divide'].includes(typeOfOperation)) {
+    prompt(myJSON.invalidOperation);
+    prompt(myJSON.operationTryAgain);
+    typeOfOperation = readline.question();
+  }
 
-switch (typeOfOperation) {
-  case 'add':
-    prompt(firstNumber + secondNumber);
-    break;
-  case 'subtract':
-    prompt(firstNumber - secondNumber);
-    break;
-  case 'multiply':
-    prompt(firstNumber * secondNumber);
-    break;
-  case 'divide':
-    prompt(firstNumber / secondNumber);
+  prompt(myJSON.result);
+
+  switch (typeOfOperation) {
+    case 'add':
+      prompt(firstNumber + secondNumber);
+      break;
+    case 'subtract':
+      prompt(firstNumber - secondNumber);
+      break;
+    case 'multiply':
+      prompt(firstNumber * secondNumber);
+      break;
+    case 'divide':
+      prompt(firstNumber / secondNumber);
+  }
+
+  prompt(myJSON.again);
+  let multipleCalc = readline.question();
+
+  if (multipleCalc.toUpperCase() !== 'YES') break;
+
 }

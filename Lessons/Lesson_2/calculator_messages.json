@@ -1,0 +1,4 @@
+{"welcome" : "Welcome to the Super-Calculator!", "firstNumber" : "What's your first number?", "secondNumber" : "What's your second Number?",
+"invalidNumber" : "Hmm... that doens't look like a valid number.", "numberTryAgain" : "Please enter your number again.",
+"operationType" : "What type of operation do you want to perform:\n1) add\n2) subtract\n3) multiply\n4) divide", "invalidOperation" : "Make sure to enter: add, subtract, multiply or divide.",
+"operationTryAgain" : "So, what type of operation would you like to do?", "result" : "The result of your operation is ...", "again" : "Would you like to perform another calculation?\n1) yes\n2) no"}
