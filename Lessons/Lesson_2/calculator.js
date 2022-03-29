@@ -34,7 +34,7 @@ while (true) {
   prompt(myJSON.operationType);
   let typeOfOperation = readline.question();
 
-  while (!['add', 'subtract', 'multiply', 'divide'].includes(typeOfOperation)) {
+  while (!['add', 'subtract', 'multiply', 'divide', '1', '2', '3', '4'].includes(typeOfOperation)) {
     prompt(myJSON.invalidOperation);
     prompt(myJSON.operationTryAgain);
     typeOfOperation = readline.question();
@@ -42,17 +42,17 @@ while (true) {
 
   prompt(myJSON.result);
 
-  switch (typeOfOperation) {
-    case 'add':
+  switch (true) {
+    case typeOfOperation === 'add' || typeOfOperation === '1':
       prompt(firstNumber + secondNumber);
       break;
-    case 'subtract':
+    case typeOfOperation === 'subtract' || typeOfOperation === '2':
       prompt(firstNumber - secondNumber);
       break;
-    case 'multiply':
+    case typeOfOperation === 'multiply' || typeOfOperation === '3':
       prompt(firstNumber * secondNumber);
       break;
-    case 'divide':
+    case typeOfOperation === 'divide' || typeOfOperation === '4':
       prompt(firstNumber / secondNumber);
   }
 
