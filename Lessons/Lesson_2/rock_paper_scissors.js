@@ -38,6 +38,8 @@ let playAgain;
 
 do {
 
+  prompt(`Welcome to Rock-Paper-Scissors-Spock-Lizard!`);
+
   let humanScore = [];
   let computerScore = [];
 
