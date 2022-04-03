@@ -5,8 +5,8 @@ function firstNumber(rowNumber) {
 function sumRow(rowNumber) {
 
   let firstNum = firstNumber(rowNumber);
-  return (firstNum * rowNumber) + (2 * (rowNumber ** 2)) -
-         (rowNumber * (rowNumber + 1));
+  return (firstNum * rowNumber) + (rowNumber * (rowNumber + 1)) -
+         (2 * rowNumber);
 
 }
 
