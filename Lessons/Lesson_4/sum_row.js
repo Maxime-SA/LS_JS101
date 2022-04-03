@@ -5,15 +5,8 @@ function firstNumber(rowNumber) {
 function sumRow(rowNumber) {
 
   let firstNum = firstNumber(rowNumber);
-  let rowSum  = firstNum;
-
-  for (let i = 1; i < rowNumber; i += 1) {
-
-    rowSum += firstNum + (2 * i);
-
-  }
-
-  return rowSum;
+  return (firstNum * rowNumber) + (2 * (rowNumber ** 2)) -
+         (rowNumber * (rowNumber + 1));
 
 }
 
