@@ -151,7 +151,7 @@ while (true) {
 
       let winner = whoPlays[counter] === 'Y' ? 'You won!' : 'The computer won!';
       console.log(winner);
-      console.log(displayBoard(gameBoardChoice(gameState)));
+      console.log(displayBoard(gameBoardState(gameState)));
       break;
 
     }
