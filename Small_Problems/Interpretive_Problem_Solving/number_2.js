@@ -1,20 +1,20 @@
 function diamond(number) {
 
-  let bottomHalf = '';
+  let myDiamond = '';
 
   for (let i = 1; i <= number; i++) {
 
     if (i <= Math.ceil(number / 2)) {
-      bottomHalf += createLine(i, number) + '\n';
+      myDiamond += createLine(i, number) + '\n';
     } else if (i < number) {
-      bottomHalf += createLine(number - (i - 1), number) + '\n';
+      myDiamond += createLine(number - (i - 1), number) + '\n';
     } else {
-      bottomHalf += createLine(number - (i - 1), number);
+      myDiamond += createLine(number - (i - 1), number);
     }
 
   }
 
-  return bottomHalf;
+  return myDiamond;
 
 }
 
