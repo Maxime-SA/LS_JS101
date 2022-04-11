@@ -1,26 +1,26 @@
 function star(oddInteger) {
 
   let middlePoint = Math.ceil(oddInteger / 2);
-  let bottomHalf = '';
+  let myStar = '';
 
   for (let i = 1; i <= oddInteger; i++) {
 
     switch (true) {
       case (i < middlePoint):
-        bottomHalf += createLine(i, oddInteger) + '\n';
+        myStar += createLine(i, oddInteger) + '\n';
         break;
       case (i === middlePoint):
-        bottomHalf += '*'.repeat(oddInteger) + '\n';
+        myStar += '*'.repeat(oddInteger) + '\n';
         break;
       case (i < oddInteger):
-        bottomHalf += createLine(oddInteger - (i - 1), oddInteger) + '\n';
+        myStar += createLine(oddInteger - (i - 1), oddInteger) + '\n';
         break;
       default:
-        bottomHalf += createLine(oddInteger - (i - 1), oddInteger);
+        myStar += createLine(oddInteger - (i - 1), oddInteger);
     }
   }
 
-  return bottomHalf;
+  return myStar;
 
 }
 
