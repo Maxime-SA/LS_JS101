@@ -5,16 +5,19 @@ function star(oddInteger) {
 
   for (let i = 1; i <= oddInteger; i++) {
 
-    if (i < middlePoint) {
-      bottomHalf += createLine(i, oddInteger) + '\n';
-    } else if (i === middlePoint) {
-      bottomHalf += '*'.repeat(oddInteger) + '\n';
-    } else if (i < oddInteger) {
-      bottomHalf += createLine(oddInteger - (i - 1), oddInteger) + '\n';
-    } else {
-      bottomHalf += createLine(oddInteger - (i - 1), oddInteger);
+    switch (true) {
+      case (i < middlePoint):
+        bottomHalf += createLine(i, oddInteger) + '\n';
+        break;
+      case (i === middlePoint):
+        bottomHalf += '*'.repeat(oddInteger) + '\n';
+        break;
+      case (i < oddInteger):
+        bottomHalf += createLine(oddInteger - (i - 1), oddInteger) + '\n';
+        break;
+      default:
+        bottomHalf += createLine(oddInteger - (i - 1), oddInteger);
     }
-
   }
 
   return bottomHalf;
@@ -29,5 +32,4 @@ function createLine(currentRow, totalLength) {
 
 }
 
-
-console.log(star(75));
+console.log(star(13));
